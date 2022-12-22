@@ -29,11 +29,11 @@ function Vector2:GetLengthSqr()
 end
 
 function Vector2:GetLength()
-    return math.sqrt( self.x^2 + self.y^2 )
+    return math.sqrt( self:GetLengthSqr() )
 end
 
 function Vector2:GetNormalized()
-    local length = self.x^2 + self.y^2
+    local length = self:GetLength()
     return Vector2:new(self.x / length, self.y / length)
 end
 
@@ -43,7 +43,7 @@ function Vector2:GetDistanceSqr(other)
 end
 
 function Vector2:GetDistance(other)
-    return math.sqrt( (other.x - self.x)^2 + (other.y - self.y)^2 )
+    return math.sqrt( self:GetDistanceSqr(other) )
 end
 
 function Vector2:GetDot(other)
