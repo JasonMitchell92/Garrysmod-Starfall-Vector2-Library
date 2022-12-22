@@ -22,6 +22,7 @@ function Vector2:__sub(other)
         return Vector2:new( self.x - other, self.y - other )
     elseif other.x and other.y then
         return Vector2:new( self.x - other.x, self.y - other.y)
+    end
 end
 
 function Vector2:__div(other)
