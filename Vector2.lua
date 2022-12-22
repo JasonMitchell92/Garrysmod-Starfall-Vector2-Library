@@ -24,28 +24,28 @@ function Vector2:__mul(other)
 end
 
 -- useful functions
-function Vector2:getLengthSqr()
+function Vector2:GetLengthSqr()
     return self.x^2 + self.y^2
 end
 
-function Vector2:getLength()
+function Vector2:GetLength()
     return math.sqrt( self:getLengthSqr() )
 end
 
-function Vector2:getNormalized()
+function Vector2:GetNormalized()
     local length = self.getLength()
     return Vector2:new(self.x / length, self.y / length)
 end
 
 -- useful functions
-function Vector2:getDistanceSqr(other)
+function Vector2:GetDistanceSqr(other)
     return (other.x - self.x)^2 + (other.y - self.y)^2
 end
 
-function Vector2:getDistance(other)
+function Vector2:GetDistance(other)
     return math.sqrt( self:getDistanceSqr(other) )
 end
 
-function Vector2:getDot(other)
+function Vector2:GetDot(other)
     return self.x * other.x + self.y * other.y
 end
