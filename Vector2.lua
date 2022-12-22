@@ -8,19 +8,40 @@ end
 
 -- basic math functions
 function Vector2:__add(other)
-    return Vector2:new( self.x + other.x, self.y + other.y)
+    if isnumber(other) then
+        return Vector2:new( self.x + other, self.y + other )
+    elseif other.x and other.y then
+        return Vector2:new( self.x + other.x, self.y + other.y)
+    else
+        error("Not a vector2 or number")
+    end
 end
 
 function Vector2:__sub(other)
-    return Vector2:new( self.x - other.x, self.y - other.y)
+    if isnumber(other) then
+        return Vector2:new( self.x - other, self.y - other )
+    elseif other.x and other.y then
+        return Vector2:new( self.x - other.x, self.y - other.y)
 end
 
 function Vector2:__div(other)
-    return Vector2:new( self.x / other.x, self.y / other.y)
+    if isnumber(other) then
+        return Vector2:new( self.x / other, self.y / other )
+    elseif other.x and other.y then
+        return Vector2:new( self.x / other.x, self.y / other.y)
+    else
+        error("Not a vector2 or number")
+    end
 end
 
 function Vector2:__mul(other)
-    return Vector2:new( self.x * other.x, self.y * other.y)
+    if isnumber(other) then
+        return Vector2:new( self.x * other, self.y * other )
+    elseif other.x and other.y then
+        return Vector2:new( self.x * other.x, self.y * other.y)
+    else
+        error("Not a vector2 or number")
+    end
 end
 
 -- useful functions
